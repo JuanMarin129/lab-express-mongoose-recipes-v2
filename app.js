@@ -1,5 +1,18 @@
 const express = require("express");
 const logger = require("morgan");
+const mongoose = require("mongoose");
+
+
+// MONGOOSE
+
+const mongoDB_URI = "mongodb://127.0.0.1:27017/express-mongoose-recipes-dev";
+mongoose.connect(mongoDB_URI)
+.then((expressDB) => {
+    console.log(`Connected to Mongo! Database name: "${expressDB.connections[0].name}"`)
+})
+.catch((error) => {
+    console.log(error)
+})
 
 const app = express();
 

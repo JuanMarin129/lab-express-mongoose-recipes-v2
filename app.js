@@ -98,7 +98,7 @@ app.put("/recipes/:id", async (req, res) => {
     try {
         const response = await Recipe.findByIdAndUpdate(req.params.id, {
             title: req.body.title,
-            instruction: req.body.instruction,
+            instructions: req.body.instructions,
             level: req.body.level,
             ingredients: req.body.ingredients,
             image: req.body.image,
